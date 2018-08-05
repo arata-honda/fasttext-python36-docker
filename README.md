@@ -1,0 +1,1 @@
+# fasttext-python36-docker
