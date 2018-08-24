@@ -38,6 +38,9 @@ rm -rf  /usr/src/mecab/
 # shared library cache を更新する
 RUN ldconfig
 
+# pip3.6のupgrade
+RUN pip3.6 install --upgrade pip
+
 # mecab-neologdのインストール用のdicディレクトリを作成
 RUN mkdir -p /usr/local/lib/mecab/dic
 
