@@ -60,3 +60,11 @@ RUN git clone http://github.com/facebookresearch/fastText.git /tmp/fastText && \
   pip3.6 install cython && \
   pip3.6 install fasttext 
 
+# flaskのインストール
+RUN pip3.6 install flask
+
+# sampleファイルをadd
+ADD flask_sample.py /
+
+# 実行
+CMD ["python3.6", "/flask_sample.py"]
