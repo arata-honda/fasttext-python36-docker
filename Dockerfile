@@ -38,6 +38,9 @@ rm -rf  /usr/src/mecab/
 # shared library cache を更新する
 RUN ldconfig
 
+# pip3.6のupgrade
+RUN pip3.6 install --upgrade pip
+
 # mecab-neologdのインストール用のdicディレクトリを作成
 RUN mkdir -p /usr/local/lib/mecab/dic
 
@@ -57,3 +60,11 @@ RUN git clone http://github.com/facebookresearch/fastText.git /tmp/fastText && \
   pip3.6 install cython && \
   pip3.6 install fasttext 
 
+# flaskのインストール
+RUN pip3.6 install flask
+
+# sampleファイルをadd
+ADD flask_sample.py /
+
+# 実行
+CMD ["python3.6", "/flask_sample.py"]
